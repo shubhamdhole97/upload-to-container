@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    container_name: file-uploader
+    ports:
+      - "3000:3000"
+    environment:
+      - MAX_FILE_SIZE=104857600  # 100 MB
+    volumes:
+      - uploads:/app/uploads  # persist files
+
+volumes:
+  uploads:
