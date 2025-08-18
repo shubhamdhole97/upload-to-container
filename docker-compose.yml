@@ -1,0 +1,16 @@
+services:
+  uploader:
+    container_name: uploader
+    image: upload-to-container:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      MAX_FILE_SIZE: "104857600"   # 100 MB
+      NODE_ENV: "production"
+    volumes:
+      - /home/ubuntu/gdrive/upload_data:/app/uploads
+    restart: unless-stopped
+
