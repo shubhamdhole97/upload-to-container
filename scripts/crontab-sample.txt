@@ -1,0 +1,2 @@
+12 22 * * * /home/ubuntu/upload-to-container/scripts/restore_gdrive.sh >> /home/ubuntu/upload-to-container/scripts/restore_gdrive.log 2>&1
+11 22 * * * /home/ubuntu/upload-to-container/scripts/backup_gdrive.sh >> /home/ubuntu/upload-to-container/scripts/backup_gdrive.log 2>&1
