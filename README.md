@@ -236,59 +236,6 @@ docker run --rm -it   -v /home/ubuntu/gdrive:/data   alpine:latest ls -la /data
 ---
 
 **Done!** Your Google Drive is now mounted at `/home/ubuntu/gdrive` and ready for Docker bind mounts.
-# 🚀 rclone + Google Drive on Ubuntu Setup ☁️
-
-
-
-
-
-
-## 🔑 1) Configure the Google Drive remote (headless-friendly)
-
-Start the interactive config:
-
-```bash
-rclone config
-```
-
-👉 Recommended answers:
-- **n** → new remote → name: `gdrive`
-- **storage**: `drive`
-- **client_id / client_secret**: press **Enter** (or add your own for higher API limits)
-- **scope**: `drive` (full) or `drive.file` (only files created by rclone)
-- **headless** flow (server without browser):
-  - When it prints a URL, select **y** for remote authorization and run on your laptop:
-    ```bash
-    rclone authorize "drive"
-    ```
-  - Paste the long token back into the server prompt ✅
-
-Quick test:
-
-```bash
-rclone lsd gdrive:
-```
-
-If you see folders, the remote works. 🎉
-
-📂 Config file path: `~/.config/rclone/rclone.conf` (e.g., `/home/ubuntu/.config/rclone/rclone.conf`).
-
----
-
-## 📂 3) Manual mount (quick smoke test)
-
-Create the mount point and mount with sane defaults (good for Docker):
-
-```bash
-mkdir -p /home/ubuntu/gdrive
-rclone mount gdrive: /home/ubuntu/gdrive   --allow-other   --uid 1000 --gid 1000 --umask 002   --vfs-cache-mode full   --vfs-cache-max-size 2G   --buffer-size 64M   --dir-cache-time 1h   --poll-interval 1m   --daemon
-```
-
-Verify it works ✅:
-```bash
-mount | grep rclone
-ls -la /home/ubuntu/gdrive
-touch /home/ubuntu/gdrive/_rclone_test.txt
 ```
 
 
