@@ -1,2 +1,2 @@
-12 22 * * * /home/ubuntu/upload-to-container/scripts/restore_gdrive.sh >> /home/ubuntu/upload-to-container/scripts/restore_gdrive.log 2>&1
-11 22 * * * /home/ubuntu/upload-to-container/scripts/backup_gdrive.sh >> /home/ubuntu/upload-to-container/scripts/backup_gdrive.log 2>&1
+( crontab -l 2>/dev/null; echo '26 14 * * * /home/ubuntu/upload-to-container/scripts/backup_gdrive.sh >> /home/ubuntu/upload-to-container/scripts/backup_gdrive.log 2>&1' ) | crontab -
+( crontab -l 2>/dev/null; echo '29 14 * * * /home/ubuntu/upload-to-container/scripts/restore_gdrive.sh >> /home/ubuntu/upload-to-container/scripts/restore_gdrive.log 2>&1' ) | crontab -
