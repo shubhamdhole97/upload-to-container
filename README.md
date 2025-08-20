@@ -15,17 +15,9 @@ The instance is automatically configured with **Docker**, **Rclone (with FUSE3)*
 - **Cloud Sync:** Rclone with FUSE3 for Google Drive or other cloud storage mounts.
 - **Task Scheduling:** Crontab installed for automated job scheduling.
 
----
 
-## 📂 Project Structure
 
-```
-.
-├── main.tf        # Terraform configuration (EC2, backend, provisioning)
-├── variables.tf   # Variables for customization
-├── outputs.tf     # Outputs (public IP, instance details)
-└── README.md      # Documentation
-```
+
 
 ---
 
