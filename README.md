@@ -236,6 +236,3 @@ docker run --rm -it   -v /home/ubuntu/gdrive:/data   alpine:latest ls -la /data
 ---
 
 **Done!** Your Google Drive is now mounted at `/home/ubuntu/gdrive` and ready for Docker bind mounts.
-```
-
-
